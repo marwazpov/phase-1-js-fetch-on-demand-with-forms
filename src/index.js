@@ -1,4 +1,3 @@
-
 const init = () => {
   const inputForm = document.querySelector('form')
 
@@ -7,11 +6,10 @@ const init = () => {
     const input = event.target.searchByID.value
 
     fetch(`http://localhost:3000/movies/${input}`)
-    .then(response => response.json())
+    .then(resp => resp.json())
     .then(data => {
       const title = document.querySelector('section#movieDetails h4');
       const summary = document.querySelector('section#movieDetails p');
-
       title.innerText = data.title;
       summary.innerText = data.summary;
     });
